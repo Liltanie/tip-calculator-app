@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>Tip calculator app</title>
+</head>
+
+<body>
+    <main>
+        <img src="./images/logo.svg" class="logo" alt="splitter logo">
+        <div class="calculator">
+            <div class="calculator__tip">
+                <div class="calculator__bill">
+                    <h2>Bill</h2>
+                    <input type="text" class="input">
+                </div>
+                <div class="calculator__select-tip">
+                    <h2>Select Tip %</h2>
+                    <div class="grid-buttons">
+                        <button class="btn btn--blue">5%</button>
+                        <button class="btn btn--blue">10%</button>
+                        <button class="btn btn--blue">15%</button>
+                        <button class="btn btn--blue">25%</button>
+                        <button class="btn btn--blue">50%</button>
+                        <input type="text" class="input">
+                    </div>
+                </div>
+                <div class="caculator__people">
+                    <h2>Number of People</h2>
+                    <input type="text" class="input">
+                </div>
+            </div>
+            <div class="calculator__result">
+                <p>Tip Amount<br><span>/ person</span></p>
+                <p class="tip-amount">$00.00</p>
+                <p>Total<br><span>/person</span></p>
+                <p class="total">$00.00</p>
+                <button class="btn btn--green btn--reset">RESET</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
