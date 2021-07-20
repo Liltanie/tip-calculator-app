@@ -15,34 +15,37 @@
         <div class="calculator">
             <div class="calculator__tip">
                 <div class="calculator__bill">
-                    <h2>Bill</h2>
-                    <input type="text" class="input">
+                    <label for="bill">Bill</label>
+                    <input type="text" id="bill" class="input input--bill">
                 </div>
                 <div class="calculator__select-tip">
-                    <h2>Select Tip %</h2>
+                    <label for="tip">Select Tip %</label>
                     <div class="grid-buttons">
                         <button class="btn btn--blue">5%</button>
                         <button class="btn btn--blue">10%</button>
                         <button class="btn btn--blue">15%</button>
                         <button class="btn btn--blue">25%</button>
                         <button class="btn btn--blue">50%</button>
-                        <input type="text" class="input">
+                        <input type="text" id="tip" class="input input--amount">
                     </div>
                 </div>
                 <div class="caculator__people">
-                    <h2>Number of People</h2>
-                    <input type="text" class="input">
+                    <label for="people">Number of People</label>
+                    <label for="people" class="people-error"></label>
+                    <input type="text" id="people" class="input input--people">
                 </div>
             </div>
             <div class="calculator__result">
                 <p>Tip Amount<br><span>/ person</span></p>
-                <p class="tip-amount">$00.00</p>
+                <p>$<span class="tip-amount">0.00</span></p>
                 <p>Total<br><span>/person</span></p>
-                <p class="total">$00.00</p>
+                <p>$<span class="total">0.00</span></p>
                 <button class="btn btn--green btn--reset">RESET</button>
             </div>
         </div>
     </main>
+
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>
