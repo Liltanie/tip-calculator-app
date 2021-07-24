@@ -1,0 +1,137 @@
+:root {
+	--dark-green: hsl(183, 100%, 15%);
+	--green: hsl(172, 67%, 45%);
+	--light-green: hsl(185, 41%, 84%);
+	--grey: hsl(203, 50%, 97%);
+	--dark-grayish-green: hsl(177, 18%, 40%);
+	--red: hsl(12, 62%, 61%);
+	font-size: 24px;
+}
+
+.btn,
+input {
+	--rounded: 0.25em;
+}
+
+.calculator {
+	--rounded: 1em;
+
+	&__result {
+		--rounded: 0.6em;
+	}
+}
+
+body {
+	font-family: 'Space Mono', monospace;
+	background-color: var(--light-green);
+	line-height: 1;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+p {
+	margin: 0;
+}
+
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 0.5em 2em;
+	border: none;
+	outline: none;
+	background-color: var(--dark-green);
+	color: #fff;
+	border-radius: var(--rounded);
+}
+
+.btn--green {
+	background-color: var(--green);
+	color: var(--dark-green);
+}
+
+input {
+	border-radius: var(--rounded);
+	padding: 0.5em;
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	outline: none;
+	background-color: var(--grey);
+	color: var(--dark-green);
+	font-weight: 700;
+	text-align: right;
+
+	&::placeholder {
+		color: var(--dark-green);
+		opacity: 0.5;
+	}
+}
+
+label {
+	display: block;
+	margin: 0.25em 0;
+	font-weight: 700;
+	font-size: 0.7rem;
+	color: var(--dark-grayish-green);
+}
+
+.people-error {
+	display: inline;
+	text-align: right;
+	float: right;
+	color: var(--red);
+}
+
+.logo {
+	margin: 2em auto 0;
+}
+
+.calculator {
+	border-radius: var(--rounded);
+	background-color: #fff;
+	padding: 1em;
+	margin-top: 1.5em;
+}
+
+.grid-buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5em;
+}
+
+.calculator__result {
+	border-radius: var(--rounded);
+	padding: 1.5em 1em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1em;
+	background-color: var(--dark-green);
+	color: var(--green);
+	font-weight: 700;
+
+	p {
+		font-size: 1.3rem;
+	}
+
+	.p-tip-amount,
+	.p-total {
+		font-size: 0.8rem;
+		color: #fff;
+
+		span {
+			opacity: 0.7;
+			font-size: 0.6rem;
+			font-weight: 400;
+		}
+	}
+
+	.btn {
+		width: 100%;
+	}
+}

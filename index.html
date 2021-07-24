@@ -1,51 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+		<link rel="stylesheet" href="./styles/normalize.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles/main.css" />
+		<title>Tip calculator app</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
-    <title>Tip calculator app</title>
-</head>
+	<body>
+		<main>
+			<img src="./images/logo.svg" class="logo" alt="splitter logo" />
+			<div class="calculator">
+				<div class="calculator__form">
+					<div class="calculator__bill">
+						<label for="bill">Bill</label>
+						<input
+							placeholder="0"
+							autocomplete="off"
+							type="text"
+							id="bill"
+							class="input input--bill"
+						/>
+					</div>
+					<div class="calculator__select-tip">
+						<label for="tip">Select Tip %</label>
+						<div class="grid-buttons">
+							<button class="btn btn--blue">5%</button>
+							<button class="btn btn--blue">10%</button>
+							<button class="btn btn--blue">15%</button>
+							<button class="btn btn--blue">25%</button>
+							<button class="btn btn--blue">50%</button>
+							<input
+								placeholder="Custom"
+								autocomplete="off"
+								type="text"
+								id="tip"
+								class="input input--amount"
+							/>
+						</div>
+					</div>
+					<div class="caculator__people">
+						<label for="people">
+							Number of People<span class="people-error" aria-live="polite"></span
+						></label>
+						<!-- <label for="people" ></label> -->
+						<input
+							placeholder="0"
+							autocomplete="off"
+							type="text"
+							value="1"
+							id="people"
+							class="input input--people"
+						/>
+					</div>
+				</div>
+				<div class="calculator__result">
+					<p class="p-tip-amount">Tip Amount<br /><span>/ person</span></p>
+					<p>$<span class="tip-amount">0.00</span></p>
+					<p class="p-total">Total<br /><span>/ person</span></p>
+					<p>$<span class="total">0.00</span></p>
+					<button class="btn btn--green btn--reset">RESET</button>
+				</div>
+			</div>
+		</main>
 
-<body>
-    <main>
-        <img src="./images/logo.svg" class="logo" alt="splitter logo">
-        <div class="calculator">
-            <div class="calculator__tip">
-                <div class="calculator__bill">
-                    <label for="bill">Bill</label>
-                    <input type="text" id="bill" class="input input--bill">
-                </div>
-                <div class="calculator__select-tip">
-                    <label for="tip">Select Tip %</label>
-                    <div class="grid-buttons">
-                        <button class="btn btn--blue">5%</button>
-                        <button class="btn btn--blue">10%</button>
-                        <button class="btn btn--blue">15%</button>
-                        <button class="btn btn--blue">25%</button>
-                        <button class="btn btn--blue">50%</button>
-                        <input type="text" id="tip" class="input input--amount">
-                    </div>
-                </div>
-                <div class="caculator__people">
-                    <label for="people">Number of People</label>
-                    <label for="people" class="people-error"></label>
-                    <input type="text" id="people" class="input input--people">
-                </div>
-            </div>
-            <div class="calculator__result">
-                <p>Tip Amount<br><span>/ person</span></p>
-                <p>$<span class="tip-amount">0.00</span></p>
-                <p>Total<br><span>/person</span></p>
-                <p>$<span class="total">0.00</span></p>
-                <button class="btn btn--green btn--reset">RESET</button>
-            </div>
-        </div>
-    </main>
-
-    <script src="./scripts/main.js"></script>
-</body>
-
+		<script src="./scripts/main.js"></script>
+	</body>
 </html>
