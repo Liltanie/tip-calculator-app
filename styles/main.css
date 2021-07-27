@@ -14,6 +14,7 @@ input {
 }
 
 .calculator {
+  --spacer: 1.5rem;
   --rounded: 1em;
 }
 .calculator__result {
@@ -35,6 +36,21 @@ p {
   margin: 0;
 }
 
+.spacing > * + * {
+  margin-top: var(--spacer, 1rem);
+}
+
+.squishy-text {
+  word-break: break-word;
+  /* Samsung browser */
+  word-wrap: break-word;
+  /* IE 11 */
+  overflow-wrap: anywhere;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -47,7 +63,6 @@ p {
   color: #fff;
   border-radius: var(--rounded);
 }
-
 .btn--green {
   background-color: var(--green);
   color: var(--dark-green);
@@ -64,6 +79,9 @@ input {
   color: var(--dark-green);
   font-weight: 700;
   text-align: right;
+  background-repeat: no-repeat;
+  background-size: 0.5rem;
+  background-position: 0.5rem center;
 }
 input::placeholder {
   color: var(--dark-green);
@@ -72,7 +90,7 @@ input::placeholder {
 
 label {
   display: block;
-  margin: 0.25em 0;
+  margin: 0.5em 0;
   font-weight: 700;
   font-size: 0.7rem;
   color: var(--dark-grayish-green);
@@ -92,23 +110,34 @@ label {
 .calculator {
   border-radius: var(--rounded);
   background-color: #fff;
-  padding: 1em;
+  padding: 1rem;
   margin-top: 1.5em;
 }
 
+.input--bill {
+  background-image: url(../images/icon-dollar.svg);
+}
+
+.input--people {
+  background-image: url(../images/icon-person.svg);
+}
+
 .grid-buttons {
+  width: 100%;
+  overflow: wrap;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5em;
 }
 
 .calculator__result {
-  border-radius: var(--rounded);
-  padding: 1.5em 1em;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 1fr 1fr min-content;
   justify-content: space-between;
   gap: 1em;
+  border-radius: var(--rounded);
+  padding: 1.5em 1em;
   background-color: var(--dark-green);
   color: var(--green);
   font-weight: 700;
@@ -129,6 +158,7 @@ label {
 }
 .calculator__result .btn {
   width: 100%;
+  grid-column: 1/3;
 }
 
 /*# sourceMappingURL=main.css.map */

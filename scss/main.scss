@@ -8,12 +8,39 @@
 	font-size: 24px;
 }
 
+@mixin for-phone-only {
+	@media (max-width: 599px) {
+		@content;
+	}
+}
+@mixin for-tablet-portrait-up {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+@mixin for-tablet-landscape-up {
+	@media (min-width: 900px) {
+		@content;
+	}
+}
+@mixin for-desktop-up {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+@mixin for-big-desktop-up {
+	@media (min-width: 1800px) {
+		@content;
+	}
+}
+
 .btn,
 input {
 	--rounded: 0.25em;
 }
 
 .calculator {
+	--spacer: 1.5rem;
 	--rounded: 1em;
 
 	&__result {
@@ -36,6 +63,19 @@ p {
 	margin: 0;
 }
 
+.spacing > * + * {
+	margin-top: var(--spacer, 1rem);
+}
+
+.squishy-text {
+	word-break: break-word; /* Samsung browser */
+	word-wrap: break-word; /* IE 11 */
+	overflow-wrap: anywhere;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
 .btn {
 	display: inline-block;
 	text-decoration: none;
@@ -47,11 +87,11 @@ p {
 	background-color: var(--dark-green);
 	color: #fff;
 	border-radius: var(--rounded);
-}
 
-.btn--green {
-	background-color: var(--green);
-	color: var(--dark-green);
+	&--green {
+		background-color: var(--green);
+		color: var(--dark-green);
+	}
 }
 
 input {
@@ -66,6 +106,10 @@ input {
 	font-weight: 700;
 	text-align: right;
 
+	background-repeat: no-repeat;
+	background-size: 0.5rem;
+	background-position: 0.5rem center;
+
 	&::placeholder {
 		color: var(--dark-green);
 		opacity: 0.5;
@@ -74,7 +118,7 @@ input {
 
 label {
 	display: block;
-	margin: 0.25em 0;
+	margin: 0.5em 0;
 	font-weight: 700;
 	font-size: 0.7rem;
 	color: var(--dark-grayish-green);
@@ -94,23 +138,34 @@ label {
 .calculator {
 	border-radius: var(--rounded);
 	background-color: #fff;
-	padding: 1em;
+	padding: 1rem;
 	margin-top: 1.5em;
 }
 
+.input--bill {
+	background-image: url(../images/icon-dollar.svg);
+}
+
+.input--people {
+	background-image: url(../images/icon-person.svg);
+}
+
 .grid-buttons {
+	width: 100%;
+	overflow: wrap;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 0.5em;
 }
 
 .calculator__result {
-	border-radius: var(--rounded);
-	padding: 1.5em 1em;
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: 1fr 1fr min-content;
 	justify-content: space-between;
 	gap: 1em;
+	border-radius: var(--rounded);
+	padding: 1.5em 1em;
 	background-color: var(--dark-green);
 	color: var(--green);
 	font-weight: 700;
@@ -133,5 +188,6 @@ label {
 
 	.btn {
 		width: 100%;
+		grid-column: 1/3;
 	}
 }
