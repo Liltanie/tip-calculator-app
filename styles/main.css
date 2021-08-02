@@ -8,6 +8,12 @@
   font-size: 24px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .btn,
 input {
   --rounded: 0.25em;
@@ -52,6 +58,7 @@ p {
 }
 
 .btn {
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
   font-weight: 700;
@@ -63,9 +70,20 @@ p {
   color: #fff;
   border-radius: var(--rounded);
 }
+.btn:hover, .btn:focus {
+  background-color: var(--green);
+  color: var(--dark-green);
+}
 .btn--green {
   background-color: var(--green);
   color: var(--dark-green);
+}
+.btn--green:hover, .btn--green:focus {
+  mix-blend-mode: color-dodge;
+}
+.btn--ghost {
+  cursor: default;
+  opacity: 0.4;
 }
 
 input {
@@ -87,6 +105,9 @@ input::placeholder {
   color: var(--dark-green);
   opacity: 0.5;
 }
+input:hover, input:focus {
+  box-shadow: 0 0 0 0.1em var(--green);
+}
 
 label {
   display: block;
@@ -94,6 +115,16 @@ label {
   font-weight: 700;
   font-size: 0.7rem;
   color: var(--dark-grayish-green);
+}
+@media (min-width: 900px) {
+  label {
+    font-size: 0.6rem;
+    margin: 0.5rem 0;
+  }
+}
+
+.input--error {
+  box-shadow: 0 0 0 0.1em var(--red);
 }
 
 .people-error {
@@ -113,6 +144,25 @@ label {
   padding: 1rem;
   margin-top: 1.5em;
 }
+@media (min-width: 900px) {
+  .calculator {
+    margin: 1.5em auto;
+    width: 85%;
+    max-width: 30rem;
+    display: flex;
+    gap: 1em;
+  }
+  .calculator > * {
+    width: 100%;
+  }
+  .calculator .btn,
+.calculator input {
+    font-size: 0.9rem;
+  }
+  .calculator__form {
+    padding: 0.5em;
+  }
+}
 
 .input--bill {
   background-image: url(../images/icon-dollar.svg);
@@ -124,10 +174,18 @@ label {
 
 .grid-buttons {
   width: 100%;
-  overflow: wrap;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5em;
+}
+@media (min-width: 900px) {
+  .grid-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 50%;
+  }
+  .grid-buttons .btn {
+    padding: 0;
+  }
 }
 
 .calculator__result {
@@ -159,6 +217,11 @@ label {
 .calculator__result .btn {
   width: 100%;
   grid-column: 1/3;
+}
+@media (min-width: 900px) {
+  .calculator__result {
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
