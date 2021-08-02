@@ -104,16 +104,16 @@ p {
 	&--green {
 		background-color: var(--green);
 		color: var(--dark-green);
-
-		&:hover,
-		&:focus {
-			mix-blend-mode: color-dodge;
-		}
 	}
 
 	&--ghost {
 		cursor: default;
 		opacity: 0.4;
+
+		&:hover,
+		&:focus {
+			mix-blend-mode: color-dodge;
+		}
 	}
 }
 
@@ -157,8 +157,18 @@ label {
 	}
 }
 
-.input--error {
-	box-shadow: 0 0 0 0.1em var(--red);
+.input {
+	&--error {
+		box-shadow: 0 0 0 0.1em var(--red);
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 0 0.1em var(--red); //Para no usar el borde verda del resto de inputs
+		}
+	}
+
+	&--active {
+		box-shadow: 0 0 0 0.1em var(--green);
+	}
 }
 
 .people-error {
@@ -170,6 +180,10 @@ label {
 
 .logo {
 	margin: 2em auto 0;
+
+	@include for-tablet-landscape-up() {
+		margin: 3em auto 0;
+	}
 }
 
 .calculator {
@@ -178,10 +192,13 @@ label {
 	padding: 1rem;
 	margin-top: 1.5em;
 
-	@include for-tablet-landscape-up() {
-		margin: 1.5em auto;
+	@include for-tablet-portrait-up() {
 		width: 85%;
 		max-width: 30rem;
+		margin: 3em auto;
+	}
+
+	@include for-tablet-landscape-up() {
 		display: flex;
 		gap: 1em;
 

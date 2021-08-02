@@ -78,12 +78,12 @@ p {
   background-color: var(--green);
   color: var(--dark-green);
 }
-.btn--green:hover, .btn--green:focus {
-  mix-blend-mode: color-dodge;
-}
 .btn--ghost {
   cursor: default;
   opacity: 0.4;
+}
+.btn--ghost:hover, .btn--ghost:focus {
+  mix-blend-mode: color-dodge;
 }
 
 input {
@@ -126,6 +126,12 @@ label {
 .input--error {
   box-shadow: 0 0 0 0.1em var(--red);
 }
+.input--error:hover, .input--error:focus {
+  box-shadow: 0 0 0 0.1em var(--red);
+}
+.input--active {
+  box-shadow: 0 0 0 0.1em var(--green);
+}
 
 .people-error {
   display: inline;
@@ -137,6 +143,11 @@ label {
 .logo {
   margin: 2em auto 0;
 }
+@media (min-width: 900px) {
+  .logo {
+    margin: 3em auto 0;
+  }
+}
 
 .calculator {
   border-radius: var(--rounded);
@@ -144,11 +155,15 @@ label {
   padding: 1rem;
   margin-top: 1.5em;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .calculator {
-    margin: 1.5em auto;
     width: 85%;
     max-width: 30rem;
+    margin: 3em auto;
+  }
+}
+@media (min-width: 900px) {
+  .calculator {
     display: flex;
     gap: 1em;
   }
